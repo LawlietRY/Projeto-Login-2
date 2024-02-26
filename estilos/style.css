@@ -29,7 +29,6 @@ section#login {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /*Diminui o valor em cima do valor total dito no top/left*/
     background-color: white;
     width: 250px;
     height: 515px;
@@ -39,6 +38,7 @@ section#login {
     display: block;
     transition: width .3s, height .3s;
     transition-timing-function: ease;
+    transform: translate(-50%, -50%); /*Diminui o valor em cima do valor total dito no top/left*/
 }
 
 section#login>div#imagem {
@@ -63,17 +63,40 @@ div#formulario>p {
     font-size: 0.8em;
 }
 
-div.campo {
+form>div.campo {
     background-color: #5f2c82;
+    border: 2px solid #5f2c82;
     width: 100%;
     display: block;
     height: 40px;
-    border-radius: 5px;
+    border-radius: 8px;
     margin: 5px 0px;
 }
 
 div.campo>label {
     display: none;
+}
+
+div.campo>span {
+    color: white;
+    font-size: 2em;
+    width: 40px;
+    padding: 5px;
+}
+
+div.campo>input {
+    background-color: #94cfcd;
+    font-size: 1em;
+    /*Falta width*/
+    height: 100%;
+    border-radius: 8px;
+    padding: 4px;
+    width: calc(100% - 45px);
+    transform: translateY(-13px); /*TODOS OS TRANSFORM DEVEM SER COLOCADOS NO FINAL DA CAIXA, PARA EVITAR BUGS*/
+}
+
+div.campo>input:focus-within {
+    background-color: white;
 }
 
 
